@@ -1,7 +1,7 @@
-export abstract class Test {
-    
-    public static xyz(): boolean {
+import { TooltipElement } from "./elements/tooltip";
 
-        return Math.floor(1000 * Math.random()) % 2 == 0;
-    }
-}
+// Register elements
+window.customElements.define('ne14-tooltip', TooltipElement);
+
+// Export utilities
+export { Test } from "./test";
