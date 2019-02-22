@@ -1,15 +1,8 @@
 define(function (require) {
 
+    var dom = require('../node_modules/@ne1410s/dom/dist/index');
     var web = require('../dist/index');
 
-    console.log(web);
+    console.log(dom, web);
 });
 
-// require(['../dist/index'], function (web, thing) {
-
-//     ((window) => {
-
-//         console.log(web.Test.xyz());
-    
-//     })(window);
-// });
