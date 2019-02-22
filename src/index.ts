@@ -1,13 +1,7 @@
-import { Pi } from './constants';
-
-export default class MyTest {
+export abstract class Test {
     
-    public area: number;
-    public circumference: number;
+    public static xyz(): boolean {
 
-    constructor(public radius: number) {
-        this.area = Pi * this.radius * this.radius;
-        this.circumference = Pi * this.radius * 2;
+        return Math.floor(1000 * Math.random()) % 2 == 0;
     }
-
 }
