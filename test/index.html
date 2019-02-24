@@ -2,14 +2,15 @@
 <html>
 <head>
     <title>Test</title>
-    <script data-main="main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="loader.js"></script>
 </head>
 <body>
     <h1>Title</h1>
     <p>Paragraph one ...</p>
-    <p>This is the second paragraph ...</p>
+    <p>This is the <span tooltip="'Second' is an ordinal term that refers to the position that immediately follows the first.">second</span> paragraph ...</p>
     <ne14-tooltip>
-        <span slot="slot-1">Things!</slot>
+        <span slot="normal">Thing</span>
+        <span slot="reveal">A definition of 'thing'.</span>
     </ne14-tooltip>
 </body>
 </html>

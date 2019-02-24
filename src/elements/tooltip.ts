@@ -8,17 +8,28 @@ export class TooltipElement extends HTMLElement {
     }
 
     private readonly css: string = `
-        span {
-            color: red;
+        .root {
+            position: relative;
+        }
+        .reveal {
+            transition: opacity .3s;
+            opacity: 0;
+            position: absolute;
+        }
+        .normal:hover + .reveal {
+            opacity: 1;
         }
     `;
 
     private readonly html: string = `
         <style>${this.css}</style>
-        <div>
-            <slot name="slot-1"></slot>
-            <span>wootie-o</span>
-            <slot name="slot-2"></slot>
-        </div>
+        <span class="root">
+            <span class="normal">
+                <slot name="normal"></slot>
+            </span>
+            <span class="reveal">
+                <slot name="reveal"></slot>
+            </span>
+        </span>
     `;
 }
