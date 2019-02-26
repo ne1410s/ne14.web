@@ -1,7 +1,16 @@
-export abstract class CustomisableBase extends HTMLElement {
+/// <reference path="../node_modules/@types/node/fs.d.ts" />
 
-    abstract get html(): string;
-    abstract get css(): string;
+//import { readFileSync } from 'fs';
+
+abstract class CustomisableBase extends HTMLElement {
+  
+    get html(): string {
+        return "";
+    };
+
+    get css(): string {
+        return "*:not(.fml) { display: none }";
+    }
 
     constructor() {
         super();
