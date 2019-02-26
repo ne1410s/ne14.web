@@ -1,10 +1,15 @@
-import { TooltipElement } from "./elements/tooltip";
+/// <reference path="tooltip/tooltip.ts" />
+
+//import { TooltipElement } from "./tooltip/tooltip";
+
+//
+console.log('firstchance script1');
 
 // Register elements
 window.customElements.define('ne14-tooltip', TooltipElement);
 
-// Strip out preload css
-document.getElementById('ne14-web-preload-css').remove();
+window.addEventListener('load', () => {
 
-// Export utilities
-export { Test } from "./test";
+    // 
+    console.log('firstchance script2');
+});

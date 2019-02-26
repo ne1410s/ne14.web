@@ -1,4 +1,4 @@
-export class TooltipElement extends HTMLElement {
+class TooltipElement extends HTMLElement {
 
     constructor() {
         super();

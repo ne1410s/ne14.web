@@ -1,19 +1,10 @@
 {
     "compilerOptions": {
-      "declaration": true,
-      "declarationDir": "dist",
-      "lib": [ "dom", "es6" ],
-      "module": "amd",
-      "moduleResolution": "node",
       "noImplicitAny": true,
       "outDir": "dist",
-      "target": "es6"
+      "target": "es5",
+      "outFile": "./dist/index.js",
+      "lib": [ "dom" ]
     },
-    "include": [
-      "src/**/*"
-    ],
-    "exclude": [
-      "node_modules",
-      "dist"
-    ]
+    "files": [ "./src/index.ts" ]
   }
