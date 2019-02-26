@@ -2,7 +2,7 @@
     "compilerOptions": {
       "noImplicitAny": true,
       "outDir": "dist",
-      "target": "es5",
+      "target": "es6",
       "outFile": "./dist/index.js",
       "lib": [ "dom" ]
     },

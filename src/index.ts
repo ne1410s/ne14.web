@@ -1,8 +1,5 @@
 /// <reference path="tooltip/tooltip.ts" />
 
-//import { TooltipElement } from "./tooltip/tooltip";
-
-//
 console.log('firstchance script1');
 
 // Register elements
