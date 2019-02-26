@@ -1,7 +1,10 @@
-/// <reference path="../element.ts" />
+/// <reference path="../base.ts" />
 /// <reference path="../../node_modules/@ne1410s/dom/src/query.ts" />
 
 class Tooltip extends CustomisableBase {
+    
+    get css(): string { return "p { background: wheat; }"; }
+    get html(): string { return '<p>Replace me</p>'; }
 
     static applyShorthand(): void {
 
