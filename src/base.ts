@@ -1,4 +1,4 @@
-abstract class CustomisableBase extends HTMLElement {
+export abstract class CustomisableBase extends HTMLElement {
 
     abstract get css(): string;
     abstract get html(): string;
