@@ -4,7 +4,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "noImplicitAny": true,
-    "target": "es5",
+    "target": "es6",
     "outDir": "dist",
   },
   "include": [

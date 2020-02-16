@@ -1,29 +1,52 @@
-// import ne14_dom from '@ne1410s/dom';
-// import { CustomisableBase } from "../base";
+import * as ne_dom from '@ne1410s/dom';
+import { CustElem } from '../cust-elem';
 
-// export class Tooltip extends CustomisableBase {
+export class Tooltip extends CustElem {
     
-//     get css(): string { return "p { background: wheat; }"; }
-//     get html(): string { return '<p>Replace me</p>'; }
+    constructor() {
+        super(`
+            .root {
+                position: relative;
+                border: 1px solid black;
+                border-radius: 3px;
+                padding: 0 0 0 .25rem;
+                margin: 0 .25rem 0 0;
+                }
+            .reveal {
+                transition: opacity .3s;
+                opacity: 0;
+                position: absolute;
+                top: -1px;
+                left: calc(100%);
+                pointer-events: none;
+                padding: 0 .25rem;
+                border: 1px solid black;
+                border-radius: 3px;
+                background: rgba(255, 255, 255, .8);
+                min-width: 180px;
+            }
+            .root:hover .reveal {
+                opacity: 1;
+                pointer-events: initial;
+            }    
+        `, `
+            <span class="root">
+                <span class="normal">
+                    <slot name="normal"></slot>
+                </span>
+                <span class="reveal">
+                    <slot name="reveal"></slot>
+                </span>
+            </span>
+        `);
+    }
 
-//     static applyShorthand(): void {
+    public set normal(val: string) {
+        //???
+        //ne_dom.seek.first('[name=normal]').textContent = val;
+    }
 
-//         const tt = document.createElement('ne14-tooltip'),
-//               tt_normal = document.createElement('span'),
-//               tt_reveal = document.createElement('span');
-
-//         tt_normal.setAttribute('slot', 'normal');
-//         tt_reveal.setAttribute('slot', 'reveal');
-//         tt.appendChild(tt_normal);
-//         tt.appendChild(tt_reveal);
-
-//         let tt_clone;
-//         ne14_dom.seek.each('[data-ne14-tooltip]', el => {
-//             tt_clone = tt.cloneNode(true);
-//             (tt_clone.childNodes[0] as HTMLElement).innerHTML = el.innerHTML;
-//             (tt_clone.childNodes[1] as HTMLElement).innerHTML = el.getAttribute('data-ne14-tooltip');
-//             el.parentNode.insertBefore(tt_clone, el);
-//             el.remove();
-//         });
-//     }
-// }
+    public set reveal(val: string) {
+        ne_dom.seek.first('[name=reveal]').textContent = val;
+    }
+}

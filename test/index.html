@@ -5,11 +5,17 @@
   <script src="../dist/ne14_cust_elems.umd.min.js"></script>
   <script>(function () {
 
-    console.log('todo...');
+    window.addEventListener('load', function() {
+
+      var tooltip = document.createElement('ne14-tooltip');
+      tooltip.setAttribute('value', 'woot2');
+      document.body.appendChild(tooltip);
+    });
 
   })();</script>
 </head>
 <body>
   <p>Todo</p>
+  <ne14-tooltip value="woot1"></ne14-tooltip>
 </body>
 </html>

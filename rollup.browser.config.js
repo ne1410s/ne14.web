@@ -6,7 +6,7 @@ import pkg from './package.json';
 export default {
   input: 'src/index.ts',
   output: {
-    name: 'ne_dom',
+    name: 'ne_cust_elems',
     file: pkg.browser,
     format: 'umd'
   },

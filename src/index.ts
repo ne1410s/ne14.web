@@ -1,10 +1,6 @@
-//import { Tooltip } from "./tooltip/tooltip";
+import { Tooltip } from './tooltip/tooltip';
 
-// Register elements here
-//window.customElements.define('ne14-tooltip', Tooltip);
+export * from './cust-elem';
+export * from './tooltip/tooltip';
 
-window.addEventListener('load', () => {
-
-    // Apply shorthands here
-    //Tooltip.applyShorthand();
-});
+window.customElements.define('ne14-tooltip', Tooltip);
