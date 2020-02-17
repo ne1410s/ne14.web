@@ -1,16 +1,16 @@
-export class CustElem extends HTMLElement {
+import { forge } from '@ne1410s/dom';
+
+export abstract class CustElem extends HTMLElement {
   
+  protected root: ShadowRoot;
+
   constructor(css: string, html: string) {
     
     super();
 
-    const elem_shadow = this.attachShadow({ mode: 'closed' }),
-          elem_style = document.createElement('style');
+    this.root = this.attachShadow({ mode: 'closed' });
+    this.root.innerHTML = html;
 
-    elem_style.innerHTML = css;
-    elem_shadow.innerHTML = html;
-    
-    elem_shadow.prepend(elem_style);
-
+    forge.chainDown(this.root, { tag: 'style', text: css });
   }
 }

@@ -3,19 +3,20 @@
 <head>
   <title>Test</title>
   <script src="../dist/ne14_cust_elems.umd.min.js"></script>
+  <script src="../../ne14.dom/dist/ne14_dom.umd.min.js"></script>
   <script>(function () {
 
-    window.addEventListener('load', function() {
-
-      var tooltip = document.createElement('ne14-tooltip');
-      tooltip.setAttribute('value', 'woot2');
-      document.body.appendChild(tooltip);
+    ne_dom.comms.on(window, 'load', function() {
+      var ttDef = { tag: 'ne14-tooltip', attr: { normal: 'hi tag', reveal: 'bye tag' } };
+      var ttNode = ne_dom.forge.chainDown(document.body, ttDef)[1];
+      setTimeout(() => ttNode.normal = 'changed tag!', 3000);
     });
 
   })();</script>
 </head>
 <body>
   <p>Todo</p>
-  <ne14-tooltip value="woot1"></ne14-tooltip>
+  <ne14-tooltip normal="woot1" reveal="woot is a funny word!"></ne14-tooltip>
+  <ne14-tooltip normal="verbatim" reveal="text and prose and stuff. connotations of tedium"></ne14-tooltip>
 </body>
 </html>

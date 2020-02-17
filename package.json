@@ -43,6 +43,6 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@ne1410s/dom": "0.1.1"
+    "@ne1410s/dom": "^0.1.2"
   }
 }
