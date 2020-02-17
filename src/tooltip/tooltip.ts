@@ -1,14 +1,18 @@
 import { seek } from '@ne1410s/dom';
 import { CustElem } from '../cust-elem';
-import template from './tooltip.html';
-import styles from './tooltip.css';
+import elem_markup from './tooltip.html';
+import elem_styles from './tooltip.css';
 
 export class Tooltip extends CustElem {
 
   static observedAttributes = ['normal', 'reveal'];
 
+  static decode(val: string): string {
+    return window.atob(val.substring(val.indexOf('base64,') + 7));
+  }
+
   constructor() {
-    super(styles, template);
+    super(Tooltip.decode(elem_styles), Tooltip.decode(elem_markup));
   }
 
   set normal(value: string) {

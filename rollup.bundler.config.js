@@ -1,5 +1,6 @@
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
+import url from '@rollup/plugin-url';
 import pkg from './package.json';
 
 // CommonJS and ES module builds (for node and bundlers)
@@ -17,5 +18,6 @@ export default {
     terser({
       include: ['*.cjs.min.js', '*.esm.min.js']
     }),
+    url({ include: ['src/**/*.css', 'src/**/*.html'] })
   ]
 };
