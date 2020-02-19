@@ -20,7 +20,7 @@
   border: 1px solid black;
   border-radius: 3px;
   background: white;
-  min-width: 180px;
+  white-space: nowrap;
   font-style: italic;
   font-size: .8em;
   padding: .5rem;
@@ -33,4 +33,7 @@
 .root:hover .reveal {
   opacity: 1;
   pointer-events: initial;
+}
+.root:not(:hover) .reveal {
+  display: none;
 }
