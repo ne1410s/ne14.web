@@ -8,7 +8,7 @@ export abstract class CustElem extends HTMLElement {
     
     super();
 
-    this.root = this.attachShadow({ mode: 'closed' });
+    this.root = this.attachShadow({ mode: 'open' });
     this.root.innerHTML = this.decode(html);
 
     forge.chainDown(this.root, { tag: 'style', text: this.decode(css) });

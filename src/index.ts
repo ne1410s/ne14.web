@@ -1,6 +1,5 @@
 import { Tooltip } from './tooltip/tooltip';
+import { Popup } from './popup/popup';
 
-export * from './cust-elem';
-export * from './tooltip/tooltip';
-
-window.customElements.define('ne14-tooltip', Tooltip);
+window.customElements.define('ne14-tip', Tooltip);
+window.customElements.define('ne14-pop', Popup);
