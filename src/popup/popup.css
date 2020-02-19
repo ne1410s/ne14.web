@@ -4,6 +4,7 @@
   background-color: rgba(0, 0, 0, .85);
   opacity: 0;
   transition: opacity .3s;
+  z-index: 99999;
 }
 .back:not(.open) {
   pointer-events: none;
