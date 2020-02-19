@@ -17,11 +17,11 @@ export class Popup extends CustElem {
     comms.on(this.backer, 'click', () => this.close());
   }
 
-  close(): void {
+  close() {
     this.removeAttribute('open');
   }
 
-  open(): void {
+  open() {
     this.setAttribute('open', '');
   }
 

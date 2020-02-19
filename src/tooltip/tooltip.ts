@@ -1,37 +1,38 @@
 import { seek } from '@ne1410s/dom';
 import { CustElem } from '../cust-elem';
-
-// Uses 'content' modules + rollup 'url' plugin
 import markupUrl from './tooltip.html';
 import stylesUrl from './tooltip.css';
 
 export class Tooltip extends CustElem {
 
-  static observedAttributes = ['normal', 'reveal'];
+  static observedAttributes = ['corner', 'reveal'];
 
   constructor() {
     super(stylesUrl, markupUrl);
   }
 
-  // Setting a property
-  set normal(value: string) {
-    seek.first('[name=normal]', this.root).textContent = value;
-  }
-
-  // Setting a property
   set reveal(value: string) {
-    seek.first('[name=reveal]', this.root).textContent = value;
+    this.setAttribute('reveal', value);
   }
 
-  // Setting an (observed) attribute
+  set corner(value: number) {
+    this.setAttribute('corner', value + '');
+  }
+
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
-    // In this case, pass-through the (observed) attributes to property setters
-    // But may wish to validate and/or manipulate and/or take other actions
-    // (especially so for non-string properties)
-    (this as any)[name] = newValue;
+    switch (name) {
+      case 'corner':
+        const target = seek.first('.reveal', this.root);
+        const corner = '1234'.split('').indexOf(newValue) === -1 ? '' : newValue;
+        if (corner) target.setAttribute('data-corner', corner + '');
+        else target.removeAttribute('data-corner');
+        break;
+      case 'reveal':
+        seek.first('[name=reveal]', this.root).textContent = newValue;
+        break;
+    }
   }
 
-  // Some lifecycle methods
   connectedCallback() {}
   disconnectedCallback() {}
 }

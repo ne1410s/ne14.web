@@ -7,21 +7,30 @@
   <script>(function () {
 
     ne_dom.comms.on(window, 'load', function() {
-      var ttDef = { tag: 'ne14-tip', attr: { normal: 'hi tag', reveal: 'bye tag' } };
+
+      // Add a new tooltip
+      var ttDef = { tag: 'ne14-tip', attr: { reveal: 'bye tag' } };
       var ttNode = ne_dom.forge.chainDown(document.body, ttDef)[1];
+      ttNode.innerText = 'define me';
       setTimeout(() => ttNode.normal = 'changed tag!', 3000);
+
+      ne_dom.comms.on(ne_dom.seek.first('button'), 'click', () => {
+        console.log('d');
+        ne_dom.seek.first('ne14-pop').open();
+      });
     });
 
   })();</script>
 </head>
 <body>
   <h1>Lorem Ipsum</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id feugiat nibh, at molestie dui. Integer et augue est. Nunc <ne14-tip normal="tincidunt" reveal="this is a funny word!"></ne14-tip>, quam sed consequat dapibus, lorem nibh finibus arcu, eget malesuada enim mi vel massa. Sed vitae lorem justo. Nulla facilisi. Duis varius libero enim, id tincidunt tellus condimentum vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur rhoncus, elit sed mollis blandit, nibh libero finibus nunc, sit amet dictum arcu justo non metus. Etiam vitae ex leo.</p>
-  <ne14-pop open>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id feugiat nibh, at molestie dui. Integer et augue est. Nunc <ne14-tip reveal="this is a funny word!" corner="2">tincidunt</ne14-tip>, quam sed consequat dapibus, lorem nibh finibus arcu, eget malesuada enim mi vel massa. Sed vitae lorem justo. Nulla facilisi. Duis varius libero enim, id tincidunt tellus condimentum vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur rhoncus, elit sed mollis blandit, nibh libero finibus nunc, sit amet dictum arcu justo non metus. Etiam vitae ex leo.</p>
+  <ne14-pop>
     <div>
       <span>spanny</span>
     </div>
     <p>Woot!</p>
   </ne14-pop>
+  <button>Popup</button>
 </body>
 </html>
