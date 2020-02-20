@@ -36,5 +36,3 @@ export class Tooltip extends CustElem {
   connectedCallback() {}
   disconnectedCallback() {}
 }
-
-window.customElements.define('ne14-tip', Tooltip);
