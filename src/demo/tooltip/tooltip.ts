@@ -1,9 +1,9 @@
 import { seek } from '@ne1410s/dom';
-import { CustElem } from '../cust-elem';
+import { CustomElementBase } from '../..';
 import markupUrl from './tooltip.html';
 import stylesUrl from './tooltip.css';
 
-export class Tooltip extends CustElem {
+export class Tooltip extends CustomElementBase {
 
   static observedAttributes = ['corner', 'reveal'];
 

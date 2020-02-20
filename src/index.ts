@@ -1,13 +1,21 @@
-export { CustElem } from './cust-elem';
+import { forge } from '@ne1410s/dom';
 
-// Omit elements from the bundle by commenting-out groups of lines below
+export abstract class CustomElementBase extends HTMLElement {
+  
+  protected root: ShadowRoot;
 
-import { Popup } from './popup/popup';
-if (window.customElements && !window.customElements.get('ne14-pop')) {
-  window.customElements.define('ne14-pop', Popup);
-}
+  constructor(css: string, html: string, mode: ShadowRootMode = 'closed') {
+    
+    super();
 
-import { Tooltip } from './tooltip/tooltip';
-if (window.customElements && !window.customElements.get('ne14-tip')) {
-  window.customElements.define('ne14-tip', Tooltip);
+    this.root = this.attachShadow({ mode });
+    this.root.innerHTML = this.decode(html);
+
+    forge.chainDown(this.root, { tag: 'style', text: this.decode(css) });
+  }
+
+  private decode(b64: string): string {
+    const bIndex = (b64 + '').indexOf('base64,');
+    return bIndex === -1 ? b64 : window.atob(b64.substring(bIndex + 7));
+  }
 }

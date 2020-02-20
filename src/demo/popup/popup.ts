@@ -1,9 +1,9 @@
 import { seek, comms } from '@ne1410s/dom';
-import { CustElem } from '../cust-elem';
+import { CustomElementBase } from '../..';
 import markupUrl from './popup.html';
 import stylesUrl from './popup.css';
 
-export class Popup extends CustElem {
+export class Popup extends CustomElementBase {
 
   static observedAttributes = ['open'];
 

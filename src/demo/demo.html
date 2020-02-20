@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test</title>
+  <script src="ne14_cust_elems.umd.min.js"></script>
+  <script>(function () {
+
+    // Define an element right away!
+    var tooltip = document.createElement('ne14-tip');
+    tooltip.textContent = 'define me';
+    tooltip.reveal = 'text that contains a definition';
+
+    window.addEventListener('load', function() {
+
+      // Manupulate as with any other
+      document.body.appendChild(tooltip);
+      var popup = document.getElementsByTagName('ne14-pop')[0];
+      var button = document.getElementsByTagName('button')[0];
+      button.addEventListener('click', function() {
+        if (typeof popup.open == 'function') {
+          popup.open();
+        }
+      });
+    });
+
+  })();</script>
+</head>
+<body>
+  <h1>Lorem Ipsum</h1>
+  <button>Open</button>
+  <!-- Even in the markup! -->
+  <p>Lorem ipsum dolor sit amet, <ne14-tip reveal="what a funny word!" corner="2">tincidunt</ne14-tip> adipiscing elit. Integer et augue est.</p> 
+  <ne14-pop>
+    <p>Popup text!</p>
+  </ne14-pop>
+</body>
+</html>
