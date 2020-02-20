@@ -15,8 +15,10 @@
       setTimeout(() => ttNode.normal = 'changed tag!', 3000);
 
       ne_dom.comms.on(ne_dom.seek.first('button'), 'click', () => {
-        console.log('d');
-        ne_dom.seek.first('ne14-pop').open();
+        var pop = ne_dom.seek.first('ne14-pop');
+        if (pop && pop.open) {
+          pop.open();
+        }
       });
     });
 

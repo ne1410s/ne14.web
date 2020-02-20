@@ -1,5 +1,5 @@
-import { Tooltip } from './tooltip/tooltip';
-import { Popup } from './popup/popup';
+export { CustElem } from './cust-elem';
 
-window.customElements.define('ne14-tip', Tooltip);
-window.customElements.define('ne14-pop', Popup);
+// To omit an element from the bundle, comment it out below as appropriate
+export { Popup } from './popup/popup';
+export { Tooltip } from './tooltip/tooltip';

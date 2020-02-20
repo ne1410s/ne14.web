@@ -37,3 +37,5 @@ export class Popup extends CustElem {
   connectedCallback() {}
   disconnectedCallback() {}
 }
+
+window.customElements.define('ne14-pop', Popup);
