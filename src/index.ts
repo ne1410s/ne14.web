@@ -1,5 +1,3 @@
-import { forge } from '@ne1410s/dom';
-
 export abstract class CustomElementBase extends HTMLElement {
   
   protected root: ShadowRoot;
@@ -11,7 +9,9 @@ export abstract class CustomElementBase extends HTMLElement {
     this.root = this.attachShadow({ mode });
     this.root.innerHTML = this.decode(html);
 
-    forge.chainDown(this.root, { tag: 'style', text: this.decode(css) });
+    const style = document.createElement('style');
+    style.textContent = this.decode(css);
+    this.root.appendChild(style);
   }
 
   private decode(b64: string): string {

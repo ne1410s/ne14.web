@@ -43,8 +43,5 @@
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript2": "^0.26.0",
     "typescript": "^3.7.5"
-  },
-  "dependencies": {
-    "@ne1410s/dom": "^0.1.2"
   }
 }

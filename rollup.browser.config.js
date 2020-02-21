@@ -12,15 +12,12 @@ export default {
   output: {
     name: 'ne_cust_elems',
     file: pkg.browser,
-    format: 'umd',
-    globals: {
-      '@ne1410s/dom': 'ne_dom'
-    }
+    format: 'umd'
   },
   plugins: [
     resolve(), // find external modules
     commonjs(), // convert external modules to ES modules
-    copy({ targets: [{ src: 'src/demo/demo.html', dest: 'dist' }] }),
+    copy({ targets: [{ src: 'src/demo/*.html', dest: 'dist' }] }),
     typescript(),
     terser({ include: '*.umd.min.js' }),
     url({ include: ['src/**/*.css', 'src/**/*.html'] })

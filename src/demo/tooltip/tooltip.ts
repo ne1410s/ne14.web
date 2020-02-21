@@ -1,4 +1,3 @@
-import { seek } from '@ne1410s/dom';
 import { CustomElementBase } from '../..';
 import markupUrl from './tooltip.html';
 import stylesUrl from './tooltip.css';
@@ -22,13 +21,14 @@ export class Tooltip extends CustomElementBase {
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     switch (name) {
       case 'corner':
-        const target = seek.first('.reveal', this.root);
+        const target = this.root.querySelector('.reveal');
         const corner = '1234'.split('').indexOf(newValue) === -1 ? '' : newValue;
         if (corner) target.setAttribute('data-corner', corner + '');
         else target.removeAttribute('data-corner');
         break;
       case 'reveal':
-        seek.first('[name=reveal]', this.root).textContent = newValue;
+        const slot = this.root.querySelector('slot[name=reveal]');
+        slot.textContent = newValue;
         break;
     }
   }

@@ -1,4 +1,3 @@
-import { seek, comms } from '@ne1410s/dom';
 import { CustomElementBase } from '../..';
 import markupUrl from './popup.html';
 import stylesUrl from './popup.css';
@@ -7,14 +6,14 @@ export class Popup extends CustomElementBase {
 
   static observedAttributes = ['open'];
 
-  private backer: Element;
-
   constructor() {
     super(stylesUrl, markupUrl);
+    
+    const back = this.root.querySelector('.back');
+    const fore = this.root.querySelector('.fore');
 
-    this.backer = seek.first('.back', this.root);
-    comms.on(seek.first('.fore', this.root), 'click', event => event.stopPropagation());
-    comms.on(this.backer, 'click', () => this.close());
+    fore.addEventListener('click', event => event.stopPropagation());
+    back.addEventListener('click', () => this.close());
   }
 
   close() {
@@ -28,8 +27,9 @@ export class Popup extends CustomElementBase {
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     switch (name) {
       case 'open':
+        const back = this.root.querySelector('.back');
         const doOpen = !!newValue || typeof newValue === 'string';
-        this.backer.classList.toggle('open', doOpen);
+        back.classList.toggle('open', doOpen);
         break;
     }
   }
