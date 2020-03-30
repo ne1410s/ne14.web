@@ -14,7 +14,7 @@ export abstract class CustomElementBase extends HTMLElement {
     this.root.appendChild(style);
   }
 
-  private decode(b64: string): string {
+  protected decode(b64: string): string {
     const bIndex = (b64 + '').indexOf('base64,');
     return bIndex === -1 ? b64 : window.atob(b64.substring(bIndex + 7));
   }
