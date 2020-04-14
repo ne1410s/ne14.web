@@ -1,4 +1,4 @@
-# ne14.cust-elems
+# @ne1410s/cust-elems
 ES Web Custom Elements
 
 `npm run build`

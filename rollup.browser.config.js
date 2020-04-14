@@ -10,7 +10,7 @@ import pkg from './package.json';
 export default {
   input: 'src/demo/index.ts', // drops out demo script for browsers
   output: {
-    name: 'ne_cust_elems',
+    name: pkg.displayName,
     file: pkg.browser,
     format: 'umd'
   },
