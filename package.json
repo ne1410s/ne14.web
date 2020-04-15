@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ne1410s/ne14.web.git"
+    "url": "git+https://github.com/ne1410s/core.elem.git"
   },
   "keywords": [
     "ES",
@@ -30,7 +30,7 @@
   "author": "ne1410s <pgj646@gmail.com> (http://ne1410s.co.uk)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ne1410s/ne14.web/issues"
+    "url": "https://github.com/ne1410s/core.elem/issues"
   },
   "devDependencies": {
     "@rollup/plugin-url": "^4.0.2",
