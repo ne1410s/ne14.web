@@ -32,6 +32,7 @@
   "bugs": {
     "url": "https://github.com/ne1410s/core.elem/issues"
   },
+  "homepage": "https://github.com/ne1410s/core.elem#readme",
   "devDependencies": {
     "@rollup/plugin-url": "^4.0.2",
     "rimraf": "^3.0.1",
