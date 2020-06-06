@@ -34,12 +34,11 @@
   },
   "homepage": "https://github.com/ne1410s/core.elem#readme",
   "devDependencies": {
-    "@rollup/plugin-url": "^4.0.2",
+    "@rollup/plugin-url": "^5.0.1",
     "rimraf": "^3.0.1",
-    "rollup": "^2.6.1",
+    "rollup": "^2.13.1",
     "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-typescript2": "^0.27.0",
-    "typescript": "^3.8.3"
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.5"
   }
 }
