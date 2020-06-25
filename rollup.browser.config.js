@@ -8,12 +8,12 @@ export default {
   output: {
     name: pkg.displayName,
     file: pkg.browser,
-    format: 'umd'
+    format: 'umd',
   },
   plugins: [
     typescript({
-      include: [ 'src/**/*.ts' ]
+      include: ['src/**/*.ts'],
     }),
-    url({ include: ['src/**/*.css', 'src/**/*.html'] })
-  ]
+    url({ include: ['src/**/*.css', 'src/**/*.html'] }),
+  ],
 };
