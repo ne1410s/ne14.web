@@ -11,5 +11,5 @@ export function reduceCss(cssIn: string): string {
 }
 
 export function reduceHtml(htmlIn: string): string {
-  return htmlIn.replace(/\s+/g, ' ').replace(/>\s</g, '><');
+  return htmlIn.replace(/\s+/g, ' ').replace(/(^|>)\s+(<|$)/g, '$1$2');
 }
