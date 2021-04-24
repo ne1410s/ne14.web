@@ -1,6 +1,6 @@
 {
   "name": "@ne1410s/cust-elems",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "ES Custom Elements base functionality",
   "main": "dist/ne14_cust_elems.cjs.min.js",
   "module": "dist/ne14_cust_elems.esm.min.js",
