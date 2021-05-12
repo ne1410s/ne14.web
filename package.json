@@ -38,7 +38,7 @@
   "homepage": "https://github.com/ne1410s/core.elem#readme",
   "devDependencies": {
     "@rollup/plugin-url": "^6.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "rimraf": "^3.0.1",
     "rollup": "^2.47.0",
     "rollup-plugin-copy": "^3.4.0",
